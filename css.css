@@ -1,0 +1,63 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+path.quadrilateral {
+    fill: steelblue;
+}
+
+#render-progress {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 120px;
+    overflow: none;
+}
+#render-progress .bar {
+    position: absolute;
+    background: steelblue;
+    height: 100%;
+}
+#render-progress .text {
+    position: absolute;
+    width: 100%;
+    line-height: 20px;
+    text-align: right;
+}
+
+#github {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #bbb;
+    font-size: 85%;
+    text-decoration: none;
+    padding: 6px;
+}
+#github:hover {
+    color: #999;
+    text-decoration: underline;
+}
+
+.hide {
+    display: none !important;
+}
+
+#unsupported-browser {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#unsupported-browser .face {
+    font-size: 5em;
+}
+#unsupported-browser .line1 {
+    font-weight: bold;
+    padding: 6px 0;
+}

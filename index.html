@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>d3.js spirograph</title>
+        <script src="d3.v3.min.js"></script>
+        <script src="dat.gui.js"></script>
+        <link rel="stylesheet" type="text/css" href="css.css">
+    </head>
+    <body>
+        <div id="graph"></div>
+        <div id="render-progress" class="hide">
+            <div class="bar"></div>
+            <div class="text"></div>
+        </div>
+        <a id="github" href="https://github.com/nylen/d3-spirograph" target="_blank">
+            Fork me on GitHub
+        </a>
+        <div id="unsupported-browser" class="hide">
+            <div class="face">&#x1F622;</div>
+            <div class="line1">
+                Looks like your browser doesn't support this site!
+            </div>
+            <div class="line2">
+                Try a recent version of
+                <a target="_blank" href="https://www.google.com/chrome/browser/index.html">Chrome</a>
+                or
+                <a target="_blank" href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>.
+            </div>
+        </div>
+        <script type="application/javascript">
+        // In case our fancy ES6 doesn't load
+        setTimeout(function() {
+            var unsupported = document.getElementById('unsupported-browser');
+            if (unsupported) {
+                unsupported.removeAttribute('class');
+            }
+        }, 750);
+        // Firefox needs ;version=1.7 but Chrome won't load the script like
+        // that :(
+        // Related: http://stackoverflow.com/a/14331721
+        var script = document.createElement('script');
+        script.setAttribute(
+            'type',
+            / Firefox\//.test(navigator.userAgent)
+                ? 'application/javascript;version=1.7'
+                : 'application/javascript'
+        );
+        script.setAttribute('src', 'js.js');
+        document.querySelector('head').appendChild(script);
+        </script>
+    </body>
+</html>
