@@ -27,6 +27,7 @@
                 <a target="_blank" href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a>.
             </div>
         </div>
+        <script type="application/javascript" src="js.js"/>
         <script type="application/javascript">
         // In case our fancy ES6 doesn't load
         setTimeout(function() {
@@ -35,18 +36,6 @@
                 unsupported.removeAttribute('class');
             }
         }, 750);
-        // Firefox needs ;version=1.7 but Chrome won't load the script like
-        // that :(
-        // Related: http://stackoverflow.com/a/14331721
-        var script = document.createElement('script');
-        script.setAttribute(
-            'type',
-            / Firefox\//.test(navigator.userAgent)
-                ? 'application/javascript;version=1.7'
-                : 'application/javascript'
-        );
-        script.setAttribute('src', 'js.js');
-        document.querySelector('head').appendChild(script);
         </script>
     </body>
 </html>
